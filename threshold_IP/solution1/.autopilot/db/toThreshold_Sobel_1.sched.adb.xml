@@ -1,0 +1,138 @@
+<stg><name>toThreshold_Sobel.1</name>
+
+
+<trans_list>
+
+<trans id="10" from="1" to="2">
+<condition id="2">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="3" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="7" bw="12" op_0_bw="12" op_1_bw="12">
+<![CDATA[
+:2  %p_src_cols_V_read_7 = call i12 @_ssdm_op_Read.ap_auto.i12(i12 %p_src_cols_V_read)
+
+]]></node>
+<StgValue><ssdm name="p_src_cols_V_read_7"/></StgValue>
+</operation>
+
+<operation id="4" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="8" bw="12" op_0_bw="12" op_1_bw="12">
+<![CDATA[
+:3  %p_src_rows_V_read_7 = call i12 @_ssdm_op_Read.ap_auto.i12(i12 %p_src_rows_V_read)
+
+]]></node>
+<StgValue><ssdm name="p_src_rows_V_read_7"/></StgValue>
+</operation>
+
+<operation id="5" st_id="1" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="9" bw="0" op_0_bw="0" op_1_bw="12" op_2_bw="12" op_3_bw="8" op_4_bw="8" op_5_bw="3" op_6_bw="3" op_7_bw="3" op_8_bw="3" op_9_bw="3" op_10_bw="3" op_11_bw="3" op_12_bw="3" op_13_bw="4" op_14_bw="4" op_15_bw="4" op_16_bw="5" op_17_bw="4" op_18_bw="3" op_19_bw="3" op_20_bw="4" op_21_bw="3" op_22_bw="3" op_23_bw="4" op_24_bw="3">
+<![CDATA[
+:4  call fastcc void @toThreshold_Filter2D.1(i12 %p_src_rows_V_read_7, i12 %p_src_cols_V_read_7, i8* %p_src_data_stream_V, i8* %p_dst_data_stream_V, i3 -3, i3 -4, i3 -3, i3 -2, i3 -1, i3 -3, i3 -2, i3 -1, i4 0, i4 0, i4 0, i5 0, i4 1, i3 2, i3 3, i4 1, i3 2, i3 3, i4 4, i3 3)
+
+]]></node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="6" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="5" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="8" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="8" op_8_bw="8" op_9_bw="8">
+<![CDATA[
+:0  call void (...)* @_ssdm_op_SpecInterface(i8* %p_dst_data_stream_V, [8 x i8]* @str252, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @str253, [1 x i8]* @str253, [8 x i8]* @str252)
+
+]]></node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="7" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="6" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="8" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="8" op_8_bw="8" op_9_bw="8">
+<![CDATA[
+:1  call void (...)* @_ssdm_op_SpecInterface(i8* %p_src_data_stream_V, [8 x i8]* @str244, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @str245, [1 x i8]* @str245, [8 x i8]* @str244)
+
+]]></node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="8" st_id="2" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="9" bw="0" op_0_bw="0" op_1_bw="12" op_2_bw="12" op_3_bw="8" op_4_bw="8" op_5_bw="3" op_6_bw="3" op_7_bw="3" op_8_bw="3" op_9_bw="3" op_10_bw="3" op_11_bw="3" op_12_bw="3" op_13_bw="4" op_14_bw="4" op_15_bw="4" op_16_bw="5" op_17_bw="4" op_18_bw="3" op_19_bw="3" op_20_bw="4" op_21_bw="3" op_22_bw="3" op_23_bw="4" op_24_bw="3">
+<![CDATA[
+:4  call fastcc void @toThreshold_Filter2D.1(i12 %p_src_rows_V_read_7, i12 %p_src_cols_V_read_7, i8* %p_src_data_stream_V, i8* %p_dst_data_stream_V, i3 -3, i3 -4, i3 -3, i3 -2, i3 -1, i3 -3, i3 -2, i3 -1, i4 0, i4 0, i4 0, i5 0, i4 1, i3 2, i3 3, i4 1, i3 2, i3 3, i4 4, i3 3)
+
+]]></node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="9" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="10" bw="0">
+<![CDATA[
+:5  ret void
+
+]]></node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+</ports>
+
+
+<dataflows>
+</dataflows>
+
+
+</stg>

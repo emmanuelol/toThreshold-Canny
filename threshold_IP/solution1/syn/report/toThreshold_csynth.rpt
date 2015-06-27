@@ -1,0 +1,318 @@
+
+
+================================================================
+== Vivado HLS Report for 'toThreshold'
+================================================================
+* Date:           Fri Jun 26 18:10:58 2015
+
+* Version:        2014.4 (Build 1071461 on Tue Nov 18 16:42:57 PM 2014)
+* Project:        threshold_IP
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +---------+-------+----------+------------+
+    |  Clock  | Target| Estimated| Uncertainty|
+    +---------+-------+----------+------------+
+    |default  |  10.00|      8.73|        1.25|
+    +---------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+----------+-----+----------+----------+
+    |     Latency    |    Interval    | Pipeline |
+    | min |    max   | min |    max   |   Type   |
+    +-----+----------+-----+----------+----------+
+    |  479|  16614971|  479|  16614972| dataflow |
+    +-----+----------+-----+----------+----------+
+
+    + Detail: 
+        * Instance: 
+        +-----------------------------------------------------+------------------------------------------+-----+----------+-----+----------+---------+
+        |                                                     |                                          |     Latency    |    Interval    | Pipeline|
+        |                       Instance                      |                  Module                  | min |    max   | min |    max   |   Type  |
+        +-----------------------------------------------------+------------------------------------------+-----+----------+-----+----------+---------+
+        |call_ret_toThreshold_Block_proc_fu_421               |toThreshold_Block_proc                    |    0|         0|    0|         0|   none  |
+        |grp_toThreshold_AXIvideo2Mat_fu_344                  |toThreshold_AXIvideo2Mat                  |    3|   2077923|    3|   2077923|   none  |
+        |grp_toThreshold_CvtColor_fu_367                      |toThreshold_CvtColor                      |    1|   2080081|    1|   2080081|   none  |
+        |grp_toThreshold_Threshold_1080_1920_0_0_s_fu_398     |toThreshold_Threshold_1080_1920_0_0_s     |    1|   2076841|    1|   2076841|   none  |
+        |grp_toThreshold_Dilate_0_0_1080_1920_s_fu_319        |toThreshold_Dilate_0_0_1080_1920_s        |  157|   2096221|  157|   2096221|   none  |
+        |grp_toThreshold_GaussianBlur_fu_311                  |toThreshold_GaussianBlur                  |  478|   2112662|  478|   2112662|   none  |
+        |grp_toThreshold_Duplicate_1080_1920_0_0_s_fu_408     |toThreshold_Duplicate_1080_1920_0_0_s     |    1|   2076841|    1|   2076841|   none  |
+        |grp_toThreshold_Sobel_fu_295                         |toThreshold_Sobel                         |  410|   2108306|  410|   2108306|   none  |
+        |grp_toThreshold_Sobel_1_fu_303                       |toThreshold_Sobel_1                       |  410|   2108306|  410|   2108306|   none  |
+        |grp_toThreshold_Loop_GradientLoop_proc_fu_285        |toThreshold_Loop_GradientLoop_proc        |   60|   2136241|   60|   2136241|   none  |
+        |grp_toThreshold_Loop_LineBufferLoop_proc_fu_335      |toThreshold_Loop_LineBufferLoop_proc      |   37|  16614971|   37|  16614971|   none  |
+        |grp_toThreshold_Dilate_0_0_1080_1920_1_fu_327        |toThreshold_Dilate_0_0_1080_1920_1        |  157|   2096221|  157|   2096221|   none  |
+        |grp_toThreshold_Mat2AXIvideo_8_1080_1920_0_s_fu_377  |toThreshold_Mat2AXIvideo_8_1080_1920_0_s  |    1|   2076841|    1|   2076841|   none  |
+        +-----------------------------------------------------+------------------------------------------+-----+----------+-----+----------+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|Expression       |        -|      -|       0|     10|
+|FIFO             |        0|      -|     205|    924|
+|Instance         |       25|     86|   16358|  28535|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|     52|
+|Register         |        -|      -|      40|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |       25|     86|   16603|  29521|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        8|     39|      15|     55|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +-------------------------------------------+------------------------------------------+---------+-------+------+-------+
+    |                  Instance                 |                  Module                  | BRAM_18K| DSP48E|  FF  |  LUT  |
+    +-------------------------------------------+------------------------------------------+---------+-------+------+-------+
+    |toThreshold_AXIvideo2Mat_U0                |toThreshold_AXIvideo2Mat                  |        0|      0|   200|    243|
+    |toThreshold_Block_proc_U0                  |toThreshold_Block_proc                    |        0|      0|   314|    313|
+    |toThreshold_CvtColor_U0                    |toThreshold_CvtColor                      |        0|      3|   140|    100|
+    |toThreshold_Dilate_0_0_1080_1920_1_U0      |toThreshold_Dilate_0_0_1080_1920_1        |        3|      0|   967|   2098|
+    |toThreshold_Dilate_0_0_1080_1920_U0        |toThreshold_Dilate_0_0_1080_1920_s        |        3|      0|   967|   2098|
+    |toThreshold_Duplicate_1080_1920_0_0_U0     |toThreshold_Duplicate_1080_1920_0_0_s     |        0|      0|    41|     75|
+    |toThreshold_GaussianBlur_U0                |toThreshold_GaussianBlur                  |        5|     23|  2171|   3466|
+    |toThreshold_Loop_GradientLoop_proc_U0      |toThreshold_Loop_GradientLoop_proc        |        0|     20|  6973|  12129|
+    |toThreshold_Loop_LineBufferLoop_proc_U0    |toThreshold_Loop_LineBufferLoop_proc      |        4|      0|   216|    801|
+    |toThreshold_Mat2AXIvideo_8_1080_1920_0_U0  |toThreshold_Mat2AXIvideo_8_1080_1920_0_s  |        0|      0|    60|    109|
+    |toThreshold_Sobel_U0                       |toThreshold_Sobel                         |        5|     20|  2134|   3509|
+    |toThreshold_Sobel_1_U0                     |toThreshold_Sobel_1                       |        5|     20|  2134|   3509|
+    |toThreshold_Threshold_1080_1920_0_0_U0     |toThreshold_Threshold_1080_1920_0_0_s     |        0|      0|    41|     85|
+    +-------------------------------------------+------------------------------------------+---------+-------+------+-------+
+    |Total                                      |                                          |       25|     86| 16358|  28535|
+    +-------------------------------------------+------------------------------------------+---------+-------+------+-------+
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    +---------------------------------+---------+---+----+------+-----+---------+
+    |               Name              | BRAM_18K| FF| LUT| Depth| Bits| Size:D*B|
+    +---------------------------------+---------+---+----+------+-----+---------+
+    |absvalueMat_data_stream_0_V_U    |        0|  5|  20|     1|    8|        8|
+    |angleMat_data_stream_0_V_U       |        0|  5|  20|     1|    8|        8|
+    |blurMat_cols_V_U                 |        0|  5|  24|     2|   12|       24|
+    |blurMat_data_stream_0_V_U        |        0|  5|  20|     1|    8|        8|
+    |blurMat_rows_V_U                 |        0|  5|  24|     2|   12|       24|
+    |blursobelxMat_cols_V_U           |        0|  5|  24|     2|   12|       24|
+    |blursobelxMat_cols_V_channel_U   |        0|  5|  24|     2|   12|       24|
+    |blursobelxMat_data_stream_0_V_U  |        0|  5|  20|     1|    8|        8|
+    |blursobelxMat_rows_V_U           |        0|  5|  24|     2|   12|       24|
+    |blursobelxMat_rows_V_channel_U   |        0|  5|  24|     2|   12|       24|
+    |blursobelyMat_cols_V_U           |        0|  5|  24|     2|   12|       24|
+    |blursobelyMat_cols_V_channel_U   |        0|  5|  24|     2|   12|       24|
+    |blursobelyMat_data_stream_0_V_U  |        0|  5|  20|     1|    8|        8|
+    |blursobelyMat_rows_V_U           |        0|  5|  24|     2|   12|       24|
+    |blursobelyMat_rows_V_channel_U   |        0|  5|  24|     2|   12|       24|
+    |dilateMat_cols_V_U               |        0|  5|  24|     2|   12|       24|
+    |dilateMat_cols_V_channel_U       |        0|  5|  24|     2|   12|       24|
+    |dilateMat_data_stream_0_V_U      |        0|  5|  20|     1|    8|        8|
+    |dilateMat_rows_V_U               |        0|  5|  24|     2|   12|       24|
+    |dilateMat_rows_V_channel_U       |        0|  5|  24|     2|   12|       24|
+    |grayMat_cols_V_U                 |        0|  5|  24|     2|   12|       24|
+    |grayMat_data_stream_0_V_U        |        0|  5|  20|     1|    8|        8|
+    |grayMat_rows_V_U                 |        0|  5|  24|     2|   12|       24|
+    |inMat_cols_V_channel1_U          |        0|  5|  24|     2|   12|       24|
+    |inMat_cols_V_channel_U           |        0|  5|  24|     2|   12|       24|
+    |inMat_data_stream_0_V_U          |        0|  5|  20|     1|    8|        8|
+    |inMat_data_stream_1_V_U          |        0|  5|  20|     1|    8|        8|
+    |inMat_data_stream_2_V_U          |        0|  5|  20|     1|    8|        8|
+    |inMat_rows_V_channel1_U          |        0|  5|  24|     2|   12|       24|
+    |inMat_rows_V_channel_U           |        0|  5|  24|     2|   12|       24|
+    |nmsupressionMat_cols_V_U         |        0|  5|  24|     2|   12|       24|
+    |nmsupressionMat_data_stream_0_U  |        0|  5|  20|     1|    8|        8|
+    |nmsupressionMat_rows_V_U         |        0|  5|  24|     2|   12|       24|
+    |outMat_cols_V_U                  |        0|  5|  24|     2|   12|       24|
+    |outMat_data_stream_0_V_U         |        0|  5|  20|     1|    8|        8|
+    |outMat_rows_V_U                  |        0|  5|  24|     2|   12|       24|
+    |sobelxMat_data_stream_0_V_U      |        0|  5|  20|     1|    8|        8|
+    |sobelyMat_data_stream_0_V_U      |        0|  5|  20|     1|    8|        8|
+    |threshMat_cols_V_U               |        0|  5|  24|     2|   12|       24|
+    |threshMat_data_stream_0_V_U      |        0|  5|  20|     1|    8|        8|
+    |threshMat_rows_V_U               |        0|  5|  24|     2|   12|       24|
+    +---------------------------------+---------+---+----+------+-----+---------+
+    |Total                            |        0|205| 924|    67|  432|      744|
+    +---------------------------------+---------+---+----+------+-----+---------+
+
+    * Expression: 
+    +----------------------------------------------------+----------+-------+---+----+------------+------------+
+    |                    Variable Name                   | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------------------------+----------+-------+---+----+------------+------------+
+    |toThreshold_AXIvideo2Mat_U0_ap_start                |    and   |      0|  0|   1|           1|           1|
+    |toThreshold_CvtColor_U0_ap_start                    |    and   |      0|  0|   1|           1|           1|
+    |toThreshold_Dilate_0_0_1080_1920_1_U0_ap_start      |    and   |      0|  0|   1|           1|           1|
+    |toThreshold_Dilate_0_0_1080_1920_U0_ap_start        |    and   |      0|  0|   1|           1|           1|
+    |toThreshold_Duplicate_1080_1920_0_0_U0_ap_start     |    and   |      0|  0|   1|           1|           1|
+    |toThreshold_GaussianBlur_U0_ap_start                |    and   |      0|  0|   1|           1|           1|
+    |toThreshold_Mat2AXIvideo_8_1080_1920_0_U0_ap_start  |    and   |      0|  0|   1|           1|           1|
+    |toThreshold_Sobel_1_U0_ap_start                     |    and   |      0|  0|   1|           1|           1|
+    |toThreshold_Sobel_U0_ap_start                       |    and   |      0|  0|   1|           1|           1|
+    |toThreshold_Threshold_1080_1920_0_0_U0_ap_start     |    and   |      0|  0|   1|           1|           1|
+    +----------------------------------------------------+----------+-------+---+----+------------+------------+
+    |Total                                               |          |      0|  0|  10|          10|          10|
+    +----------------------------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------------------------------------------------+----+-----------+-----+-----------+
+    |                                 Name                                | LUT| Input Size| Bits| Total Bits|
+    +---------------------------------------------------------------------+----+-----------+-----+-----------+
+    |ap_chn_write_toThreshold_Block_proc_U0_blurMat_cols_V                |   1|          2|    1|          2|
+    |ap_chn_write_toThreshold_Block_proc_U0_blurMat_rows_V                |   1|          2|    1|          2|
+    |ap_chn_write_toThreshold_Block_proc_U0_blursobelxMat_cols_V          |   1|          2|    1|          2|
+    |ap_chn_write_toThreshold_Block_proc_U0_blursobelxMat_cols_V_channel  |   1|          2|    1|          2|
+    |ap_chn_write_toThreshold_Block_proc_U0_blursobelxMat_rows_V          |   1|          2|    1|          2|
+    |ap_chn_write_toThreshold_Block_proc_U0_blursobelxMat_rows_V_channel  |   1|          2|    1|          2|
+    |ap_chn_write_toThreshold_Block_proc_U0_blursobelyMat_cols_V          |   1|          2|    1|          2|
+    |ap_chn_write_toThreshold_Block_proc_U0_blursobelyMat_cols_V_channel  |   1|          2|    1|          2|
+    |ap_chn_write_toThreshold_Block_proc_U0_blursobelyMat_rows_V          |   1|          2|    1|          2|
+    |ap_chn_write_toThreshold_Block_proc_U0_blursobelyMat_rows_V_channel  |   1|          2|    1|          2|
+    |ap_chn_write_toThreshold_Block_proc_U0_dilateMat_cols_V              |   1|          2|    1|          2|
+    |ap_chn_write_toThreshold_Block_proc_U0_dilateMat_cols_V_channel      |   1|          2|    1|          2|
+    |ap_chn_write_toThreshold_Block_proc_U0_dilateMat_rows_V              |   1|          2|    1|          2|
+    |ap_chn_write_toThreshold_Block_proc_U0_dilateMat_rows_V_channel      |   1|          2|    1|          2|
+    |ap_chn_write_toThreshold_Block_proc_U0_grayMat_cols_V                |   1|          2|    1|          2|
+    |ap_chn_write_toThreshold_Block_proc_U0_grayMat_rows_V                |   1|          2|    1|          2|
+    |ap_chn_write_toThreshold_Block_proc_U0_inMat_cols_V_channel          |   1|          2|    1|          2|
+    |ap_chn_write_toThreshold_Block_proc_U0_inMat_cols_V_channel1         |   1|          2|    1|          2|
+    |ap_chn_write_toThreshold_Block_proc_U0_inMat_rows_V_channel          |   1|          2|    1|          2|
+    |ap_chn_write_toThreshold_Block_proc_U0_inMat_rows_V_channel1         |   1|          2|    1|          2|
+    |ap_chn_write_toThreshold_Block_proc_U0_nmsupressionMat_cols_V        |   1|          2|    1|          2|
+    |ap_chn_write_toThreshold_Block_proc_U0_nmsupressionMat_rows_V        |   1|          2|    1|          2|
+    |ap_chn_write_toThreshold_Block_proc_U0_outMat_cols_V                 |   1|          2|    1|          2|
+    |ap_chn_write_toThreshold_Block_proc_U0_outMat_rows_V                 |   1|          2|    1|          2|
+    |ap_chn_write_toThreshold_Block_proc_U0_threshMat_cols_V              |   1|          2|    1|          2|
+    |ap_chn_write_toThreshold_Block_proc_U0_threshMat_rows_V              |   1|          2|    1|          2|
+    |ap_sig_ready_blurMat_cols_V_full_n                                   |   1|          2|    1|          2|
+    |ap_sig_ready_blurMat_rows_V_full_n                                   |   1|          2|    1|          2|
+    |ap_sig_ready_blursobelxMat_cols_V_channel_full_n                     |   1|          2|    1|          2|
+    |ap_sig_ready_blursobelxMat_cols_V_full_n                             |   1|          2|    1|          2|
+    |ap_sig_ready_blursobelxMat_rows_V_channel_full_n                     |   1|          2|    1|          2|
+    |ap_sig_ready_blursobelxMat_rows_V_full_n                             |   1|          2|    1|          2|
+    |ap_sig_ready_blursobelyMat_cols_V_channel_full_n                     |   1|          2|    1|          2|
+    |ap_sig_ready_blursobelyMat_cols_V_full_n                             |   1|          2|    1|          2|
+    |ap_sig_ready_blursobelyMat_rows_V_channel_full_n                     |   1|          2|    1|          2|
+    |ap_sig_ready_blursobelyMat_rows_V_full_n                             |   1|          2|    1|          2|
+    |ap_sig_ready_dilateMat_cols_V_channel_full_n                         |   1|          2|    1|          2|
+    |ap_sig_ready_dilateMat_cols_V_full_n                                 |   1|          2|    1|          2|
+    |ap_sig_ready_dilateMat_rows_V_channel_full_n                         |   1|          2|    1|          2|
+    |ap_sig_ready_dilateMat_rows_V_full_n                                 |   1|          2|    1|          2|
+    |ap_sig_ready_grayMat_cols_V_full_n                                   |   1|          2|    1|          2|
+    |ap_sig_ready_grayMat_rows_V_full_n                                   |   1|          2|    1|          2|
+    |ap_sig_ready_inMat_cols_V_channel1_full_n                            |   1|          2|    1|          2|
+    |ap_sig_ready_inMat_cols_V_channel_full_n                             |   1|          2|    1|          2|
+    |ap_sig_ready_inMat_rows_V_channel1_full_n                            |   1|          2|    1|          2|
+    |ap_sig_ready_inMat_rows_V_channel_full_n                             |   1|          2|    1|          2|
+    |ap_sig_ready_nmsupressionMat_cols_V_full_n                           |   1|          2|    1|          2|
+    |ap_sig_ready_nmsupressionMat_rows_V_full_n                           |   1|          2|    1|          2|
+    |ap_sig_ready_outMat_cols_V_full_n                                    |   1|          2|    1|          2|
+    |ap_sig_ready_outMat_rows_V_full_n                                    |   1|          2|    1|          2|
+    |ap_sig_ready_threshMat_cols_V_full_n                                 |   1|          2|    1|          2|
+    |ap_sig_ready_threshMat_rows_V_full_n                                 |   1|          2|    1|          2|
+    +---------------------------------------------------------------------+----+-----------+-----+-----------+
+    |Total                                                                |  52|        104|   52|        104|
+    +---------------------------------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------------------------------------------+---+----+-----+-----------+
+    |                            Name                           | FF| LUT| Bits| Const Bits|
+    +-----------------------------------------------------------+---+----+-----+-----------+
+    |ap_CS                                                      |  1|   0|    1|          0|
+    |ap_reg_procdone_toThreshold_AXIvideo2Mat_U0                |  1|   0|    1|          0|
+    |ap_reg_procdone_toThreshold_Block_proc_U0                  |  1|   0|    1|          0|
+    |ap_reg_procdone_toThreshold_CvtColor_U0                    |  1|   0|    1|          0|
+    |ap_reg_procdone_toThreshold_Dilate_0_0_1080_1920_1_U0      |  1|   0|    1|          0|
+    |ap_reg_procdone_toThreshold_Dilate_0_0_1080_1920_U0        |  1|   0|    1|          0|
+    |ap_reg_procdone_toThreshold_Duplicate_1080_1920_0_0_U0     |  1|   0|    1|          0|
+    |ap_reg_procdone_toThreshold_GaussianBlur_U0                |  1|   0|    1|          0|
+    |ap_reg_procdone_toThreshold_Loop_GradientLoop_proc_U0      |  1|   0|    1|          0|
+    |ap_reg_procdone_toThreshold_Loop_LineBufferLoop_proc_U0    |  1|   0|    1|          0|
+    |ap_reg_procdone_toThreshold_Mat2AXIvideo_8_1080_1920_0_U0  |  1|   0|    1|          0|
+    |ap_reg_procdone_toThreshold_Sobel_1_U0                     |  1|   0|    1|          0|
+    |ap_reg_procdone_toThreshold_Sobel_U0                       |  1|   0|    1|          0|
+    |ap_reg_procdone_toThreshold_Threshold_1080_1920_0_0_U0     |  1|   0|    1|          0|
+    |ap_reg_ready_blurMat_cols_V_full_n                         |  1|   0|    1|          0|
+    |ap_reg_ready_blurMat_rows_V_full_n                         |  1|   0|    1|          0|
+    |ap_reg_ready_blursobelxMat_cols_V_channel_full_n           |  1|   0|    1|          0|
+    |ap_reg_ready_blursobelxMat_cols_V_full_n                   |  1|   0|    1|          0|
+    |ap_reg_ready_blursobelxMat_rows_V_channel_full_n           |  1|   0|    1|          0|
+    |ap_reg_ready_blursobelxMat_rows_V_full_n                   |  1|   0|    1|          0|
+    |ap_reg_ready_blursobelyMat_cols_V_channel_full_n           |  1|   0|    1|          0|
+    |ap_reg_ready_blursobelyMat_cols_V_full_n                   |  1|   0|    1|          0|
+    |ap_reg_ready_blursobelyMat_rows_V_channel_full_n           |  1|   0|    1|          0|
+    |ap_reg_ready_blursobelyMat_rows_V_full_n                   |  1|   0|    1|          0|
+    |ap_reg_ready_dilateMat_cols_V_channel_full_n               |  1|   0|    1|          0|
+    |ap_reg_ready_dilateMat_cols_V_full_n                       |  1|   0|    1|          0|
+    |ap_reg_ready_dilateMat_rows_V_channel_full_n               |  1|   0|    1|          0|
+    |ap_reg_ready_dilateMat_rows_V_full_n                       |  1|   0|    1|          0|
+    |ap_reg_ready_grayMat_cols_V_full_n                         |  1|   0|    1|          0|
+    |ap_reg_ready_grayMat_rows_V_full_n                         |  1|   0|    1|          0|
+    |ap_reg_ready_inMat_cols_V_channel1_full_n                  |  1|   0|    1|          0|
+    |ap_reg_ready_inMat_cols_V_channel_full_n                   |  1|   0|    1|          0|
+    |ap_reg_ready_inMat_rows_V_channel1_full_n                  |  1|   0|    1|          0|
+    |ap_reg_ready_inMat_rows_V_channel_full_n                   |  1|   0|    1|          0|
+    |ap_reg_ready_nmsupressionMat_cols_V_full_n                 |  1|   0|    1|          0|
+    |ap_reg_ready_nmsupressionMat_rows_V_full_n                 |  1|   0|    1|          0|
+    |ap_reg_ready_outMat_cols_V_full_n                          |  1|   0|    1|          0|
+    |ap_reg_ready_outMat_rows_V_full_n                          |  1|   0|    1|          0|
+    |ap_reg_ready_threshMat_cols_V_full_n                       |  1|   0|    1|          0|
+    |ap_reg_ready_threshMat_rows_V_full_n                       |  1|   0|    1|          0|
+    +-----------------------------------------------------------+---+----+-----+-----------+
+    |Total                                                      | 40|   0|   40|          0|
+    +-----------------------------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------+-----+-----+------------+---------------------+--------------+
+|     RTL Ports     | Dir | Bits|  Protocol  |    Source Object    |    C Type    |
++-------------------+-----+-----+------------+---------------------+--------------+
+|IN_STREAM_TDATA    |  in |   24|    axis    |  IN_STREAM_V_data_V |    pointer   |
+|IN_STREAM_TKEEP    |  in |    3|    axis    |  IN_STREAM_V_keep_V |    pointer   |
+|IN_STREAM_TSTRB    |  in |    3|    axis    |  IN_STREAM_V_strb_V |    pointer   |
+|IN_STREAM_TUSER    |  in |    1|    axis    |  IN_STREAM_V_user_V |    pointer   |
+|IN_STREAM_TLAST    |  in |    1|    axis    |  IN_STREAM_V_last_V |    pointer   |
+|IN_STREAM_TID      |  in |    1|    axis    |   IN_STREAM_V_id_V  |    pointer   |
+|IN_STREAM_TDEST    |  in |    1|    axis    |  IN_STREAM_V_dest_V |    pointer   |
+|IN_STREAM_TVALID   |  in |    1|    axis    |  IN_STREAM_V_dest_V |    pointer   |
+|IN_STREAM_TREADY   | out |    1|    axis    |  IN_STREAM_V_dest_V |    pointer   |
+|OUT_STREAM_TDATA   | out |    8|    axis    | OUT_STREAM_V_data_V |    pointer   |
+|OUT_STREAM_TKEEP   | out |    1|    axis    | OUT_STREAM_V_keep_V |    pointer   |
+|OUT_STREAM_TSTRB   | out |    1|    axis    | OUT_STREAM_V_strb_V |    pointer   |
+|OUT_STREAM_TUSER   | out |    1|    axis    | OUT_STREAM_V_user_V |    pointer   |
+|OUT_STREAM_TLAST   | out |    1|    axis    | OUT_STREAM_V_last_V |    pointer   |
+|OUT_STREAM_TID     | out |    1|    axis    |  OUT_STREAM_V_id_V  |    pointer   |
+|OUT_STREAM_TDEST   | out |    1|    axis    | OUT_STREAM_V_dest_V |    pointer   |
+|OUT_STREAM_TVALID  | out |    1|    axis    | OUT_STREAM_V_dest_V |    pointer   |
+|OUT_STREAM_TREADY  |  in |    1|    axis    | OUT_STREAM_V_dest_V |    pointer   |
+|cols               |  in |   32|  ap_stable |         cols        |    scalar    |
+|rows               |  in |   32|  ap_stable |         rows        |    scalar    |
+|ap_clk             |  in |    1| ap_ctrl_hs |     toThreshold     | return value |
+|ap_rst_n           |  in |    1| ap_ctrl_hs |     toThreshold     | return value |
+|ap_start           |  in |    1| ap_ctrl_hs |     toThreshold     | return value |
+|ap_done            | out |    1| ap_ctrl_hs |     toThreshold     | return value |
+|ap_idle            | out |    1| ap_ctrl_hs |     toThreshold     | return value |
+|ap_ready           | out |    1| ap_ctrl_hs |     toThreshold     | return value |
++-------------------+-----+-----+------------+---------------------+--------------+
+

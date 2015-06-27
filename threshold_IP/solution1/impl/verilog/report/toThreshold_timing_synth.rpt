@@ -1,0 +1,87 @@
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:29:27 MST 2014
+| Date              : Fri Jun 26 18:20:52 2015
+| Host              : ESIT044 running 64-bit Service Pack 1  (build 7601)
+| Command           : report_timing -file ./report/toThreshold_timing_synth.rpt
+| Design            : toThreshold
+| Device            : 7z020-clg484
+| Speed File        : -1  PRODUCTION 1.11 2014-09-11
+| Temperature Grade : C
+-----------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.750ns  (required time - arrival time)
+  Source:                 toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/NUMB_CMP/FAST_CMP.CMP_EQ_TOP/WIDE_AND/CHAIN_GEN[10].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/DSP48E1_ADD.DSP48E1_ADD/DSP/CARRYIN
+                            (rising edge-triggered cell DSP48E1 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        7.838ns  (logic 2.829ns (36.094%)  route 5.009ns (63.906%))
+  Logic Levels:           11  (CARRY4=2 LUT2=2 LUT3=3 LUT6=2 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.078ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.659ns = ( 11.659 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.737ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk
+                         net (fo=12402, unset)        1.737     1.737    toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/NUMB_CMP/FAST_CMP.CMP_EQ_TOP/WIDE_AND/aclk
+                                                                      r  toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/NUMB_CMP/FAST_CMP.CMP_EQ_TOP/WIDE_AND/CHAIN_GEN[10].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.518     2.255 r  toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/NUMB_CMP/FAST_CMP.CMP_EQ_TOP/WIDE_AND/CHAIN_GEN[10].CARRYS_DEL.NEED_DEL.CARRYS_FD/Q
+                         net (fo=6, unplaced)         0.770     3.025    toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/NUMB_CMP/FAST_CMP.CMP_EQ_TOP/WIDE_AND/CARRY_OUT
+                         LUT3 (Prop_lut3_I0_O)        0.124     3.149 r  toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/NUMB_CMP/FAST_CMP.CMP_EQ_TOP/WIDE_AND/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_2__4/O
+                         net (fo=109, unplaced)       0.551     3.700    toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/A_IP_DELAY/i_pipe/b_largest
+                         LUT6 (Prop_lut6_I4_O)        0.124     3.824 f  toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/A_IP_DELAY/i_pipe/CHAIN_GEN[4].C_MUX.CARRY_MUX_i_6/O
+                         net (fo=3, unplaced)         0.467     4.291    toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/A_IP_DELAY/i_pipe/n_2_CHAIN_GEN[4].C_MUX.CARRY_MUX_i_6
+                         LUT2 (Prop_lut2_I1_O)        0.124     4.415 r  toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/A_IP_DELAY/i_pipe/CHAIN_GEN[4].C_MUX.CARRY_MUX_i_2/O
+                         net (fo=2, unplaced)         0.913     5.328    toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/A_IP_DELAY/i_pipe/n_2_CHAIN_GEN[4].C_MUX.CARRY_MUX_i_2
+                         LUT3 (Prop_lut3_I0_O)        0.124     5.452 r  toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/A_IP_DELAY/i_pipe/CHAIN_GEN[4].C_MUX.CARRY_MUX_i_1__0/O
+                         net (fo=1, unplaced)         0.000     5.452    toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/EQ_ZERO/CARRY_ZERO_DET/A[4]
+                         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     5.965 r  toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/EQ_ZERO/CARRY_ZERO_DET/CHAIN_GEN[4].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=2, unplaced)         0.000     5.965    toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/EQ_ZERO/CARRY_ZERO_DET/O6[7]
+                         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.252     6.217 f  toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/EQ_ZERO/CARRY_ZERO_DET/CHAIN_GEN[8].C_MUX.CARRY_MUX_CARRY4/CO[2]
+                         net (fo=1, unplaced)         0.452     6.669    toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/A_IP_DELAY/i_pipe/O6[10]
+                         LUT6 (Prop_lut6_I0_O)        0.310     6.979 f  toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/A_IP_DELAY/i_pipe/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX1_i_3/O
+                         net (fo=1, unplaced)         0.733     7.712    toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/A_IP_DELAY/i_pipe/n_2_MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX1_i_3
+                         LUT3 (Prop_lut3_I0_O)        0.124     7.836 f  toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/A_IP_DELAY/i_pipe/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX1_i_1/O
+                         net (fo=1, unplaced)         0.000     7.836    toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/I0
+                         MUXF7 (Prop_muxf7_I0_O)      0.209     8.045 f  toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX1/O
+                         net (fo=1, unplaced)         0.000     8.045    toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/mux0_1
+                         MUXF8 (Prop_muxf8_I1_O)      0.088     8.133 f  toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/ALIGN_BLK/ALIGN_SHIFT/ALIGN_Z_D/MUX_LOOP[2].OTHER_LEVELS.DO_CHUNKS[0].LUT6_STRUCT_MUX.MUX2/O
+                         net (fo=2, unplaced)         0.323     8.456    toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/SUB_DELAY/i_pipe/zeros_add
+                         LUT2 (Prop_lut2_I1_O)        0.319     8.775 r  toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/EXP/SUB_DELAY/i_pipe/DSP_i_1__0/O
+                         net (fo=1, unplaced)         0.800     9.575    toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/DSP48E1_ADD.DSP48E1_ADD/carry_in_del
+                         DSP48E1                                      r  toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/DSP48E1_ADD.DSP48E1_ADD/DSP/CARRYIN
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk
+                         net (fo=12402, unset)        1.659    11.659    toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/DSP48E1_ADD.DSP48E1_ADD/aclk
+                                                                      r  toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/DSP48E1_ADD.DSP48E1_ADD/DSP/CLK
+                         clock pessimism              0.000    11.659    
+                         clock uncertainty           -0.035    11.623    
+                         DSP48E1 (Setup_dsp48e1_CLK_CARRYIN)
+                                                     -1.298    10.325    toThreshold_Loop_GradientLoop_proc_U0/toThreshold_dadd_64ns_64ns_64_5_full_dsp_U84/toThreshold_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/DSP48E1_ADD.DSP48E1_ADD/DSP
+  -------------------------------------------------------------------
+                         required time                         10.325    
+                         arrival time                          -9.575    
+  -------------------------------------------------------------------
+                         slack                                  0.750    
+
+
+
+

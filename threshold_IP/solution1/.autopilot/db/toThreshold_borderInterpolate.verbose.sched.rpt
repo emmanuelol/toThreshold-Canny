@@ -1,0 +1,354 @@
+
+
+================================================================
+== Vivado HLS Report for 'toThreshold_borderInterpolate'
+================================================================
+* Date:           Fri Jun 26 18:10:40 2015
+
+* Version:        2014.4 (Build 1071461 on Tue Nov 18 16:42:57 PM 2014)
+* Project:        threshold_IP
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +---------+-------+----------+------------+
+    |  Clock  | Target| Estimated| Uncertainty|
+    +---------+-------+----------+------------+
+    |default  |  10.00|      8.25|        1.25|
+    +---------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    2|    2|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      -|
+|Register         |        -|      -|       -|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
+N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 1
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 3
+* Pipeline: 1
+  Pipeline-0: II = 1, D = 3, States = { 1 2 3 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+* FSM state operations: 
+
+ <State 1>: 6.20ns
+ST_1: borderType_read [1/1] 1.28ns
+._crit_edge_ifconv:0  %borderType_read = call i4 @_ssdm_op_Read.ap_auto.i4(i4 %borderType)
+
+ST_1: len_read [1/1] 1.28ns
+._crit_edge_ifconv:1  %len_read = call i12 @_ssdm_op_Read.ap_auto.i12(i12 %len)
+
+ST_1: p_read [1/1] 1.28ns
+._crit_edge_ifconv:2  %p_read = call i13 @_ssdm_op_Read.ap_auto.i13(i13 %p)
+
+ST_1: tmp [1/1] 0.00ns
+._crit_edge_ifconv:3  %tmp = call i1 @_ssdm_op_BitSelect.i1.i13.i32(i13 %p_read, i32 12)
+
+ST_1: rev [1/1] 1.37ns
+._crit_edge_ifconv:4  %rev = xor i1 %tmp, true
+
+ST_1: len_cast1_cast [1/1] 0.00ns
+._crit_edge_ifconv:5  %len_cast1_cast = zext i12 %len_read to i13
+
+ST_1: tmp_1 [1/1] 2.18ns
+._crit_edge_ifconv:6  %tmp_1 = icmp sgt i13 %len_cast1_cast, %p_read
+
+ST_1: or_cond [1/1] 1.37ns
+._crit_edge_ifconv:7  %or_cond = and i1 %tmp_1, %rev
+
+ST_1: tmp_2 [1/1] 1.88ns
+._crit_edge_ifconv:9  %tmp_2 = icmp eq i4 %borderType_read, 1
+
+ST_1: tmp_151 [1/1] 0.00ns
+._crit_edge_ifconv:10  %tmp_151 = call i1 @_ssdm_op_BitSelect.i1.i13.i32(i13 %p_read, i32 12)
+
+ST_1: tmp_5 [1/1] 1.88ns
+._crit_edge_ifconv:14  %tmp_5 = icmp eq i4 %borderType_read, 2
+
+ST_1: tmp_7 [1/1] 1.88ns
+._crit_edge_ifconv:16  %tmp_7 = icmp eq i4 %borderType_read, 4
+
+ST_1: p_assign_1 [1/1] 1.37ns
+._crit_edge_ifconv:17  %p_assign_1 = xor i13 %p_read, -1
+
+ST_1: tmp_11 [1/1] 1.88ns
+._crit_edge_ifconv:21  %tmp_11 = icmp eq i4 %borderType_read, 0
+
+ST_1: tmp_1_not [1/1] 1.37ns
+._crit_edge_ifconv:37  %tmp_1_not = xor i1 %tmp_1, true
+
+ST_1: sel_tmp [1/1] 1.37ns
+._crit_edge_ifconv:38  %sel_tmp = or i1 %tmp, %tmp_1_not
+
+
+ <State 2>: 8.25ns
+ST_2: tmp_4 [1/1] 1.84ns
+._crit_edge_ifconv:11  %tmp_4 = add i13 %len_cast1_cast, -1
+
+ST_2: p_assign [1/1] 1.37ns
+._crit_edge_ifconv:12  %p_assign = select i1 %tmp_151, i13 0, i13 %tmp_4
+
+ST_2: p_assign_cast [1/1] 0.00ns
+._crit_edge_ifconv:13  %p_assign_cast = sext i13 %p_assign to i14
+
+ST_2: tmp_6 [1/1] 2.14ns
+._crit_edge_ifconv:15  %tmp_6 = icmp eq i12 %len_read, 1
+
+ST_2: p_p [1/1] 1.37ns
+._crit_edge_ifconv:18  %p_p = select i1 %tmp_151, i13 %p_assign_1, i13 %p_read
+
+ST_2: tmp_9 [1/1] 2.18ns
+._crit_edge_ifconv:20  %tmp_9 = icmp slt i13 %p_p, %len_cast1_cast
+
+ST_2: p_p3 [1/1] 1.37ns
+._crit_edge_ifconv:22  %p_p3 = select i1 %tmp_11, i13 -1, i13 %p_read
+
+ST_2: tmp_12 [1/1] 0.00ns
+._crit_edge_ifconv:24  %tmp_12 = call i13 @_ssdm_op_BitConcatenate.i13.i12.i1(i12 %len_read, i1 false)
+
+ST_2: tmp_73_cast [1/1] 0.00ns
+._crit_edge_ifconv:25  %tmp_73_cast = zext i13 %tmp_12 to i15
+
+ST_2: tmp_73_cast_cast [1/1] 0.00ns
+._crit_edge_ifconv:26  %tmp_73_cast_cast = zext i13 %tmp_12 to i14
+
+ST_2: tmp_13 [1/1] 1.37ns
+._crit_edge_ifconv:27  %tmp_13 = xor i13 %p_p, -1
+
+ST_2: tmp_74_cast [1/1] 0.00ns
+._crit_edge_ifconv:28  %tmp_74_cast = sext i13 %tmp_13 to i15
+
+ST_2: p_assign_2 [1/1] 1.96ns
+._crit_edge_ifconv:29  %p_assign_2 = add i15 %tmp_73_cast, %tmp_74_cast
+
+ST_2: p_assign_3 [1/1] 1.96ns
+._crit_edge_ifconv:30  %p_assign_3 = sub i13 0, %p_read
+
+ST_2: p_p2 [1/1] 1.37ns
+._crit_edge_ifconv:31  %p_p2 = select i1 %tmp_151, i13 %p_assign_3, i13 %p_read
+
+ST_2: p_p2_cast_cast [1/1] 0.00ns
+._crit_edge_ifconv:33  %p_p2_cast_cast = zext i13 %p_p2 to i14
+
+ST_2: tmp_15 [1/1] 2.18ns
+._crit_edge_ifconv:34  %tmp_15 = icmp ult i13 %p_p2, %len_cast1_cast
+
+ST_2: tmp_17 [1/1] 1.96ns
+._crit_edge_ifconv:35  %tmp_17 = add i14 %tmp_73_cast_cast, -2
+
+ST_2: p_assign_4 [1/1] 1.96ns
+._crit_edge_ifconv:36  %p_assign_4 = sub i14 %tmp_17, %p_p2_cast_cast
+
+ST_2: sel_tmp1 [1/1] 1.37ns
+._crit_edge_ifconv:39  %sel_tmp1 = and i1 %tmp_2, %sel_tmp
+
+ST_2: sel_tmp2 [1/1] 1.37ns
+._crit_edge_ifconv:40  %sel_tmp2 = select i1 %sel_tmp1, i14 %p_assign_cast, i14 %p_assign_4
+
+ST_2: sel_tmp2_cast [1/1] 0.00ns
+._crit_edge_ifconv:41  %sel_tmp2_cast = sext i14 %sel_tmp2 to i15
+
+ST_2: sel_tmp5_demorgan [1/1] 1.37ns
+._crit_edge_ifconv:42  %sel_tmp5_demorgan = or i1 %or_cond, %tmp_2
+
+ST_2: sel_tmp5 [1/1] 1.37ns
+._crit_edge_ifconv:43  %sel_tmp5 = xor i1 %sel_tmp5_demorgan, true
+
+ST_2: sel_tmp6 [1/1] 1.37ns
+._crit_edge_ifconv:44  %sel_tmp6 = and i1 %tmp_5, %sel_tmp5
+
+ST_2: sel_tmp7 [1/1] 1.37ns
+._crit_edge_ifconv:45  %sel_tmp7 = xor i1 %tmp_6, true
+
+ST_2: sel_tmp8 [1/1] 1.37ns
+._crit_edge_ifconv:46  %sel_tmp8 = and i1 %sel_tmp6, %sel_tmp7
+
+ST_2: sel_tmp9 [1/1] 1.37ns
+._crit_edge_ifconv:47  %sel_tmp9 = xor i1 %tmp_9, true
+
+ST_2: sel_tmp10 [1/1] 1.37ns
+._crit_edge_ifconv:48  %sel_tmp10 = and i1 %sel_tmp8, %sel_tmp9
+
+ST_2: sel_tmp11 [1/1] 1.37ns
+._crit_edge_ifconv:49  %sel_tmp11 = select i1 %sel_tmp10, i15 %p_assign_2, i15 %sel_tmp2_cast
+
+ST_2: sel_tmp16_demorgan [1/1] 1.37ns
+._crit_edge_ifconv:50  %sel_tmp16_demorgan = or i1 %sel_tmp5_demorgan, %tmp_5
+
+ST_2: sel_tmp18_demorgan [1/1] 1.37ns
+._crit_edge_ifconv:51  %sel_tmp18_demorgan = or i1 %sel_tmp16_demorgan, %tmp_7
+
+ST_2: sel_tmp25 [1/1] 1.37ns
+._crit_edge_ifconv:54  %sel_tmp25 = and i1 %sel_tmp6, %tmp_6
+
+ST_2: sel_tmp33 [1/1] 1.37ns
+._crit_edge_ifconv:56  %sel_tmp33 = and i1 %sel_tmp8, %tmp_9
+
+ST_2: sel_tmp39 [1/1] 1.37ns
+._crit_edge_ifconv:58  %sel_tmp39 = xor i1 %sel_tmp16_demorgan, true
+
+ST_2: sel_tmp40 [1/1] 1.37ns
+._crit_edge_ifconv:59  %sel_tmp40 = and i1 %tmp_7, %sel_tmp39
+
+ST_2: sel_tmp41 [1/1] 1.37ns
+._crit_edge_ifconv:60  %sel_tmp41 = and i1 %sel_tmp40, %tmp_6
+
+ST_2: tmp53 [1/1] 1.37ns
+._crit_edge_ifconv:62  %tmp53 = and i1 %tmp_15, %sel_tmp7
+
+ST_2: sel_tmp51 [1/1] 1.37ns
+._crit_edge_ifconv:63  %sel_tmp51 = and i1 %tmp53, %sel_tmp40
+
+
+ <State 3>: 8.22ns
+ST_3: p_cast1_cast [1/1] 0.00ns
+._crit_edge_ifconv:8  %p_cast1_cast = sext i13 %p_read to i15
+
+ST_3: p_p_cast2_cast [1/1] 0.00ns
+._crit_edge_ifconv:19  %p_p_cast2_cast = sext i13 %p_p to i15
+
+ST_3: p_p3_cast_cast [1/1] 0.00ns
+._crit_edge_ifconv:23  %p_p3_cast_cast = sext i13 %p_p3 to i15
+
+ST_3: p_p2_cast [1/1] 0.00ns
+._crit_edge_ifconv:32  %p_p2_cast = zext i13 %p_p2 to i15
+
+ST_3: sel_tmp19 [1/1] 1.37ns
+._crit_edge_ifconv:52  %sel_tmp19 = select i1 %sel_tmp18_demorgan, i15 %sel_tmp11, i15 %p_p3_cast_cast
+
+ST_3: sel_tmp20 [1/1] 1.37ns
+._crit_edge_ifconv:53  %sel_tmp20 = select i1 %or_cond, i15 %p_cast1_cast, i15 %sel_tmp19
+
+ST_3: sel_tmp26 [1/1] 1.37ns
+._crit_edge_ifconv:55  %sel_tmp26 = select i1 %sel_tmp25, i15 0, i15 %sel_tmp20
+
+ST_3: sel_tmp34 [1/1] 1.37ns
+._crit_edge_ifconv:57  %sel_tmp34 = select i1 %sel_tmp33, i15 %p_p_cast2_cast, i15 %sel_tmp26
+
+ST_3: sel_tmp42 [1/1] 1.37ns
+._crit_edge_ifconv:61  %sel_tmp42 = select i1 %sel_tmp41, i15 0, i15 %sel_tmp34
+
+ST_3: p_assign_5 [1/1] 1.37ns
+._crit_edge_ifconv:64  %p_assign_5 = select i1 %sel_tmp51, i15 %p_p2_cast, i15 %sel_tmp42
+
+ST_3: stg_69 [1/1] 0.00ns
+._crit_edge_ifconv:65  ret i15 %p_assign_5
+
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

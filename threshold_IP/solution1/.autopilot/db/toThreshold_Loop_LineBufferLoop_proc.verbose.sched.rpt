@@ -1,0 +1,630 @@
+
+
+================================================================
+== Vivado HLS Report for 'toThreshold_Loop_LineBufferLoop_proc'
+================================================================
+* Date:           Fri Jun 26 18:10:47 2015
+
+* Version:        2014.4 (Build 1071461 on Tue Nov 18 16:42:57 PM 2014)
+* Project:        threshold_IP
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +---------+-------+----------+------------+
+    |  Clock  | Target| Estimated| Uncertainty|
+    +---------+-------+----------+------------+
+    |default  |  10.00|      8.55|        1.25|
+    +---------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+----------+-----+----------+---------+
+    |     Latency    |    Interval    | Pipeline|
+    | min |    max   | min |    max   |   Type  |
+    +-----+----------+-----+----------+---------+
+    |   37|  16614971|   37|  16614971|   none  |
+    +-----+----------+-----+----------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------+-----+----------+------------+-----------+-----------+----------+----------+
+        |                     |     Latency    |  Iteration |  Initiation Interval  |   Trip   |          |
+        |      Loop Name      | min |    max   |   Latency  |  achieved |   target  |   Count  | Pipelined|
+        +---------------------+-----+----------+------------+-----------+-----------+----------+----------+
+        |- LineBufferLoop     |   36|  16614970| 18 ~ 15370 |          -|          -| 2 ~ 1081 |    no    |
+        | + LineBufferLoop.1  |   16|     15368|           8|          -|          -| 2 ~ 1921 |    no    |
+        +---------------------+-----+----------+------------+-----------+-----------+----------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      -|
+|Register         |        -|      -|       -|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
+N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 10
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond4)
+3 --> 
+	4  / (!exitcond3)
+	2  / (exitcond3)
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	3  / true
+* FSM state operations: 
+
+ <State 1>: 1.84ns
+ST_1: angle_value_1 [1/1] 0.00ns
+newFuncRoot:0  %angle_value_1 = alloca i32, align 4
+
+ST_1: filterMask_2_1 [1/1] 0.00ns
+newFuncRoot:1  %filterMask_2_1 = alloca i32, align 4
+
+ST_1: filterMask_2_0 [1/1] 0.00ns
+newFuncRoot:2  %filterMask_2_0 = alloca i32, align 4
+
+ST_1: filterMask_0_0 [1/1] 0.00ns
+newFuncRoot:3  %filterMask_0_0 = alloca i32, align 4
+
+ST_1: filterMask_0_1 [1/1] 0.00ns
+newFuncRoot:4  %filterMask_0_1 = alloca i32, align 4
+
+ST_1: filterMask_1_1 [1/1] 0.00ns
+newFuncRoot:5  %filterMask_1_1 = alloca i32, align 4
+
+ST_1: filterMask_1_0 [1/1] 0.00ns
+newFuncRoot:6  %filterMask_1_0 = alloca i32, align 4
+
+ST_1: stg_18 [1/1] 0.00ns
+newFuncRoot:7  call void (...)* @_ssdm_op_SpecIFCore(i32 %rows, [1 x i8]* @p_str1806, [10 x i8]* @p_str1807, [1 x i8]* @p_str1806, i32 -1, [1 x i8]* @p_str1806, [1 x i8]* @p_str1806, [20 x i8]* @p_str1808)
+
+ST_1: stg_19 [1/1] 0.00ns
+newFuncRoot:8  call void (...)* @_ssdm_op_SpecIFCore(i32 %cols, [1 x i8]* @p_str1806, [10 x i8]* @p_str1807, [1 x i8]* @p_str1806, i32 -1, [1 x i8]* @p_str1806, [1 x i8]* @p_str1806, [20 x i8]* @p_str1808)
+
+ST_1: stg_20 [1/1] 0.00ns
+newFuncRoot:9  call void (...)* @_ssdm_op_SpecInterface(i8* %nmsupressionMat_data_stream_0_V, [8 x i8]* @str264, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @str265, [1 x i8]* @str265, [8 x i8]* @str264)
+
+ST_1: stg_21 [1/1] 0.00ns
+newFuncRoot:10  call void (...)* @_ssdm_op_SpecInterface(i8* %angleMat_data_stream_0_V, [8 x i8]* @str260, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @str261, [1 x i8]* @str261, [8 x i8]* @str260)
+
+ST_1: stg_22 [1/1] 0.00ns
+newFuncRoot:11  call void (...)* @_ssdm_op_SpecInterface(i8* %absvalueMat_data_stream_0_V, [8 x i8]* @str256, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @str257, [1 x i8]* @str257, [8 x i8]* @str256)
+
+ST_1: rows_read [1/1] 0.00ns
+newFuncRoot:12  %rows_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %rows)
+
+ST_1: cols_read [1/1] 0.00ns
+newFuncRoot:13  %cols_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %cols)
+
+ST_1: lineBuffer_val_0 [1/1] 0.00ns
+newFuncRoot:14  %lineBuffer_val_0 = alloca [5760 x i8], align 1
+
+ST_1: tmp [1/1] 0.00ns
+newFuncRoot:15  %tmp = trunc i32 %cols_read to i11
+
+ST_1: tmp_16 [1/1] 1.84ns
+newFuncRoot:16  %tmp_16 = add i11 %tmp, 1
+
+ST_1: tmp_42 [1/1] 0.00ns
+newFuncRoot:17  %tmp_42 = trunc i32 %rows_read to i11
+
+ST_1: tmp_17 [1/1] 1.84ns
+newFuncRoot:18  %tmp_17 = add i11 %tmp_42, 1
+
+ST_1: stg_30 [1/1] 1.57ns
+newFuncRoot:19  br label %0
+
+
+ <State 2>: 2.11ns
+ST_2: row5 [1/1] 0.00ns
+:0  %row5 = phi i11 [ 0, %newFuncRoot ], [ %row, %1 ]
+
+ST_2: exitcond4 [1/1] 2.11ns
+:1  %exitcond4 = icmp eq i11 %row5, %tmp_17
+
+ST_2: stg_33 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 1081, i64 0)
+
+ST_2: row [1/1] 1.84ns
+:3  %row = add i11 %row5, 1
+
+ST_2: stg_35 [1/1] 0.00ns
+:4  br i1 %exitcond4, label %.exitStub, label %3
+
+ST_2: stg_36 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecLoopName([15 x i8]* @p_str1813) nounwind
+
+ST_2: tmp_s [1/1] 0.00ns
+:1  %tmp_s = call i32 (...)* @_ssdm_op_SpecRegionBegin([15 x i8]* @p_str1813)
+
+ST_2: tmp_27 [1/1] 2.11ns
+:2  %tmp_27 = icmp ult i11 %row5, %tmp_42
+
+ST_2: tmp_28 [1/1] 2.11ns
+:3  %tmp_28 = icmp ne i11 %row5, 0
+
+ST_2: stg_40 [1/1] 1.57ns
+:4  br label %2
+
+ST_2: stg_41 [1/1] 0.00ns
+.exitStub:0  ret void
+
+
+ <State 3>: 4.35ns
+ST_3: col6 [1/1] 0.00ns
+:0  %col6 = phi i11 [ 0, %3 ], [ %col, %._crit_edge21 ]
+
+ST_3: filterMask_0_0_1 [1/1] 0.00ns
+:1  %filterMask_0_0_1 = load i32* %filterMask_0_1, align 4
+
+ST_3: exitcond3 [1/1] 2.11ns
+:2  %exitcond3 = icmp eq i11 %col6, %tmp_16
+
+ST_3: stg_45 [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 1921, i64 0)
+
+ST_3: col [1/1] 1.84ns
+:4  %col = add i11 %col6, 1
+
+ST_3: stg_47 [1/1] 0.00ns
+:5  br i1 %exitcond3, label %1, label %4
+
+ST_3: tmp_32 [1/1] 2.11ns
+:0  %tmp_32 = icmp ult i11 %col6, %tmp
+
+ST_3: tmp_36_trn1_cast [1/1] 0.00ns
+:3  %tmp_36_trn1_cast = zext i11 %col6 to i13
+
+ST_3: p_addr3 [1/1] 1.96ns
+:4  %p_addr3 = add i13 %tmp_36_trn1_cast, 3840
+
+ST_3: tmp_34 [1/1] 0.00ns
+:5  %tmp_34 = zext i13 %p_addr3 to i64
+
+ST_3: lineBuffer_val_0_addr [1/1] 0.00ns
+:6  %lineBuffer_val_0_addr = getelementptr [5760 x i8]* %lineBuffer_val_0, i64 0, i64 %tmp_34
+
+ST_3: lineBuffer_val_0_load [2/2] 2.39ns
+:7  %lineBuffer_val_0_load = load i8* %lineBuffer_val_0_addr, align 1
+
+ST_3: empty [1/1] 0.00ns
+:0  %empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([15 x i8]* @p_str1813, i32 %tmp_s)
+
+ST_3: stg_55 [1/1] 0.00ns
+:1  br label %0
+
+
+ <State 4>: 4.09ns
+ST_4: tmp_33 [1/1] 1.37ns
+:1  %tmp_33 = and i1 %tmp_32, %tmp_27
+
+ST_4: tmp_36_trn1_cast1 [1/1] 0.00ns
+:2  %tmp_36_trn1_cast1 = zext i11 %col6 to i12
+
+ST_4: lineBuffer_val_0_load [1/2] 2.39ns
+:7  %lineBuffer_val_0_load = load i8* %lineBuffer_val_0_addr, align 1
+
+ST_4: stg_59 [1/1] 1.57ns
+:8  br i1 %tmp_33, label %5, label %._crit_edge
+
+ST_4: tmp_35 [1/1] 0.00ns
+:0  %tmp_35 = call i32 (...)* @_ssdm_op_SpecRegionBegin([13 x i8]* @p_str1826)
+
+ST_4: stg_61 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1806) nounwind
+
+ST_4: absvalueMat_data_stream_0_V_r [1/1] 1.70ns
+:2  %absvalueMat_data_stream_0_V_r = call i8 @_ssdm_op_Read.ap_fifo.volatile.i8P(i8* %absvalueMat_data_stream_0_V)
+
+ST_4: empty_45 [1/1] 0.00ns
+:3  %empty_45 = call i32 (...)* @_ssdm_op_SpecRegionEnd([13 x i8]* @p_str1826, i32 %tmp_35)
+
+ST_4: stg_64 [1/1] 2.39ns
+:4  store i8 %absvalueMat_data_stream_0_V_r, i8* %lineBuffer_val_0_addr, align 1
+
+ST_4: stg_65 [1/1] 1.57ns
+:5  br label %._crit_edge
+
+
+ <State 5>: 4.23ns
+ST_5: gep79_loc [1/1] 0.00ns
+._crit_edge:0  %gep79_loc = phi i8 [ %absvalueMat_data_stream_0_V_r, %5 ], [ %lineBuffer_val_0_load, %4 ]
+
+ST_5: p_addr6 [1/1] 1.84ns
+._crit_edge:1  %p_addr6 = add i12 %tmp_36_trn1_cast1, 1920
+
+ST_5: tmp_36 [1/1] 0.00ns
+._crit_edge:2  %tmp_36 = zext i12 %p_addr6 to i64
+
+ST_5: lineBuffer_val_0_addr_1 [1/1] 0.00ns
+._crit_edge:3  %lineBuffer_val_0_addr_1 = getelementptr [5760 x i8]* %lineBuffer_val_0, i64 0, i64 %tmp_36
+
+ST_5: lineBuffer_val_0_load_1 [2/2] 2.39ns
+._crit_edge:4  %lineBuffer_val_0_load_1 = load i8* %lineBuffer_val_0_addr_1, align 1
+
+
+ <State 6>: 4.78ns
+ST_6: lineBuffer_val_0_load_1 [1/2] 2.39ns
+._crit_edge:4  %lineBuffer_val_0_load_1 = load i8* %lineBuffer_val_0_addr_1, align 1
+
+ST_6: stg_72 [1/1] 1.57ns
+._crit_edge:5  br i1 %tmp_32, label %6, label %._crit_edge17
+
+ST_6: tmp_43 [1/1] 0.00ns
+:0  %tmp_43 = zext i11 %col6 to i64
+
+ST_6: lineBuffer_val_0_addr_2 [1/1] 0.00ns
+:1  %lineBuffer_val_0_addr_2 = getelementptr [5760 x i8]* %lineBuffer_val_0, i64 0, i64 %tmp_43
+
+ST_6: stg_75 [1/1] 2.39ns
+:2  store i8 %lineBuffer_val_0_load_1, i8* %lineBuffer_val_0_addr_2, align 1
+
+ST_6: stg_76 [1/1] 2.39ns
+:3  store i8 %gep79_loc, i8* %lineBuffer_val_0_addr_1, align 1
+
+ST_6: stg_77 [1/1] 1.57ns
+:4  br label %._crit_edge17
+
+
+ <State 7>: 2.39ns
+ST_7: tmp_46 [1/1] 0.00ns
+._crit_edge17:2  %tmp_46 = zext i11 %col6 to i64
+
+ST_7: lineBuffer_val_0_addr_3 [1/1] 0.00ns
+._crit_edge17:3  %lineBuffer_val_0_addr_3 = getelementptr [5760 x i8]* %lineBuffer_val_0, i64 0, i64 %tmp_46
+
+ST_7: lineBuffer_val_0_load_2 [2/2] 2.39ns
+._crit_edge17:4  %lineBuffer_val_0_load_2 = load i8* %lineBuffer_val_0_addr_3, align 1
+
+
+ <State 8>: 3.48ns
+ST_8: gep77_loc [1/1] 0.00ns
+._crit_edge17:0  %gep77_loc = phi i8 [ %gep79_loc, %6 ], [ %lineBuffer_val_0_load_1, %._crit_edge ]
+
+ST_8: filterMask_1_1_1 [1/1] 0.00ns
+._crit_edge17:1  %filterMask_1_1_1 = zext i8 %gep77_loc to i32
+
+ST_8: lineBuffer_val_0_load_2 [1/2] 2.39ns
+._crit_edge17:4  %lineBuffer_val_0_load_2 = load i8* %lineBuffer_val_0_addr_3, align 1
+
+ST_8: filterMask_0_1_2 [1/1] 0.00ns
+._crit_edge17:5  %filterMask_0_1_2 = zext i8 %lineBuffer_val_0_load_2 to i32
+
+ST_8: filterMask_2_1_1 [1/1] 0.00ns
+._crit_edge17:6  %filterMask_2_1_1 = zext i8 %gep79_loc to i32
+
+ST_8: stg_86 [1/1] 0.00ns
+._crit_edge17:7  br i1 %tmp_33, label %7, label %._crit_edge18_ifconv
+
+ST_8: tmp_37 [1/1] 0.00ns
+:0  %tmp_37 = call i32 (...)* @_ssdm_op_SpecRegionBegin([13 x i8]* @p_str1826)
+
+ST_8: stg_88 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1806) nounwind
+
+ST_8: angleMat_data_stream_0_V_read [1/1] 1.70ns
+:2  %angleMat_data_stream_0_V_read = call i8 @_ssdm_op_Read.ap_fifo.volatile.i8P(i8* %angleMat_data_stream_0_V)
+
+ST_8: angle_value [1/1] 0.00ns
+:3  %angle_value = zext i8 %angleMat_data_stream_0_V_read to i32
+
+ST_8: empty_46 [1/1] 0.00ns
+:4  %empty_46 = call i32 (...)* @_ssdm_op_SpecRegionEnd([13 x i8]* @p_str1826, i32 %tmp_37)
+
+ST_8: stg_92 [1/1] 0.00ns
+:5  store i32 %angle_value, i32* %angle_value_1, align 4
+
+ST_8: stg_93 [1/1] 0.00ns
+:6  br label %._crit_edge18_ifconv
+
+ST_8: tmp_51 [1/1] 2.11ns
+._crit_edge18_ifconv:45  %tmp_51 = icmp ne i11 %col6, 0
+
+ST_8: tmp_52 [1/1] 1.37ns
+._crit_edge18_ifconv:46  %tmp_52 = and i1 %tmp_51, %tmp_28
+
+
+ <State 9>: 8.00ns
+ST_9: angle_value_1_load [1/1] 0.00ns
+._crit_edge18_ifconv:0  %angle_value_1_load = load i32* %angle_value_1, align 4
+
+ST_9: filterMask_2_1_load [1/1] 0.00ns
+._crit_edge18_ifconv:1  %filterMask_2_1_load = load i32* %filterMask_2_1, align 4
+
+ST_9: filterMask_2_0_load [1/1] 0.00ns
+._crit_edge18_ifconv:2  %filterMask_2_0_load = load i32* %filterMask_2_0, align 4
+
+ST_9: filterMask_0_0_load [1/1] 0.00ns
+._crit_edge18_ifconv:3  %filterMask_0_0_load = load i32* %filterMask_0_0, align 4
+
+ST_9: filterMask_1_1_load [1/1] 0.00ns
+._crit_edge18_ifconv:4  %filterMask_1_1_load = load i32* %filterMask_1_1, align 4
+
+ST_9: filterMask_1_0_load [1/1] 0.00ns
+._crit_edge18_ifconv:5  %filterMask_1_0_load = load i32* %filterMask_1_0, align 4
+
+ST_9: tmp_38 [1/1] 2.52ns
+._crit_edge18_ifconv:6  %tmp_38 = icmp eq i32 %angle_value_1_load, 0
+
+ST_9: tmp_39 [1/1] 2.52ns
+._crit_edge18_ifconv:7  %tmp_39 = icmp slt i32 %filterMask_1_1_load, %filterMask_0_0_1
+
+ST_9: tmp_40 [1/1] 2.52ns
+._crit_edge18_ifconv:8  %tmp_40 = icmp slt i32 %filterMask_1_1_load, %filterMask_2_1_load
+
+ST_9: or_cond [1/1] 1.37ns
+._crit_edge18_ifconv:9  %or_cond = or i1 %tmp_39, %tmp_40
+
+ST_9: tmp_47 [1/1] 0.00ns
+._crit_edge18_ifconv:10  %tmp_47 = trunc i32 %filterMask_1_1_load to i8
+
+ST_9: tmp_41 [1/1] 2.52ns
+._crit_edge18_ifconv:12  %tmp_41 = icmp eq i32 %angle_value_1_load, 45
+
+ST_9: slt [1/1] 2.52ns
+._crit_edge18_ifconv:13  %slt = icmp slt i32 %filterMask_1_1_load, %filterMask_2_1_1
+
+ST_9: rev [1/1] 1.37ns
+._crit_edge18_ifconv:14  %rev = xor i1 %slt, true
+
+ST_9: slt1 [1/1] 2.52ns
+._crit_edge18_ifconv:15  %slt1 = icmp slt i32 %filterMask_1_1_load, %filterMask_0_0_load
+
+ST_9: rev1 [1/1] 1.37ns
+._crit_edge18_ifconv:16  %rev1 = xor i1 %slt1, true
+
+ST_9: tmp_44 [1/1] 1.37ns
+._crit_edge18_ifconv:17  %tmp_44 = and i1 %rev, %rev1
+
+ST_9: tmp_45 [1/1] 2.52ns
+._crit_edge18_ifconv:19  %tmp_45 = icmp eq i32 %angle_value_1_load, 90
+
+ST_9: slt2 [1/1] 2.52ns
+._crit_edge18_ifconv:20  %slt2 = icmp slt i32 %filterMask_1_1_load, %filterMask_1_1_1
+
+ST_9: rev2 [1/1] 1.37ns
+._crit_edge18_ifconv:21  %rev2 = xor i1 %slt2, true
+
+ST_9: slt3 [1/1] 2.52ns
+._crit_edge18_ifconv:22  %slt3 = icmp slt i32 %filterMask_1_1_load, %filterMask_1_0_load
+
+ST_9: rev3 [1/1] 1.37ns
+._crit_edge18_ifconv:23  %rev3 = xor i1 %slt3, true
+
+ST_9: tmp_48 [1/1] 1.37ns
+._crit_edge18_ifconv:24  %tmp_48 = and i1 %rev2, %rev3
+
+ST_9: tmp_49 [1/1] 2.52ns
+._crit_edge18_ifconv:26  %tmp_49 = icmp eq i32 %angle_value_1_load, 135
+
+ST_9: slt4 [1/1] 2.52ns
+._crit_edge18_ifconv:27  %slt4 = icmp slt i32 %filterMask_1_1_load, %filterMask_0_1_2
+
+ST_9: rev4 [1/1] 1.37ns
+._crit_edge18_ifconv:28  %rev4 = xor i1 %slt4, true
+
+ST_9: slt5 [1/1] 2.52ns
+._crit_edge18_ifconv:29  %slt5 = icmp slt i32 %filterMask_1_1_load, %filterMask_2_0_load
+
+ST_9: rev5 [1/1] 1.37ns
+._crit_edge18_ifconv:30  %rev5 = xor i1 %slt5, true
+
+ST_9: tmp_50 [1/1] 1.37ns
+._crit_edge18_ifconv:31  %tmp_50 = and i1 %rev4, %rev5
+
+ST_9: sel_tmp [1/1] 1.37ns
+._crit_edge18_ifconv:33  %sel_tmp = xor i1 %tmp_38, true
+
+ST_9: sel_tmp1 [1/1] 1.37ns
+._crit_edge18_ifconv:34  %sel_tmp1 = and i1 %tmp_41, %sel_tmp
+
+ST_9: sel_tmp5_demorgan [1/1] 1.37ns
+._crit_edge18_ifconv:36  %sel_tmp5_demorgan = or i1 %tmp_38, %tmp_41
+
+ST_9: sel_tmp5 [1/1] 1.37ns
+._crit_edge18_ifconv:37  %sel_tmp5 = xor i1 %sel_tmp5_demorgan, true
+
+ST_9: sel_tmp6 [1/1] 1.37ns
+._crit_edge18_ifconv:38  %sel_tmp6 = and i1 %tmp_45, %sel_tmp5
+
+ST_9: sel_tmp12_demorgan [1/1] 1.37ns
+._crit_edge18_ifconv:40  %sel_tmp12_demorgan = or i1 %sel_tmp5_demorgan, %tmp_45
+
+ST_9: sel_tmp3 [1/1] 1.37ns
+._crit_edge18_ifconv:41  %sel_tmp3 = xor i1 %sel_tmp12_demorgan, true
+
+ST_9: sel_tmp4 [1/1] 1.37ns
+._crit_edge18_ifconv:42  %sel_tmp4 = and i1 %tmp_49, %sel_tmp3
+
+
+ <State 10>: 8.55ns
+ST_10: p_v0_assign [1/1] 1.37ns
+._crit_edge18_ifconv:11  %p_v0_assign = select i1 %or_cond, i8 0, i8 %tmp_47
+
+ST_10: v0_assign_1_s [1/1] 1.37ns
+._crit_edge18_ifconv:18  %v0_assign_1_s = select i1 %tmp_44, i8 %tmp_47, i8 0
+
+ST_10: v0_assign_2_s [1/1] 1.37ns
+._crit_edge18_ifconv:25  %v0_assign_2_s = select i1 %tmp_48, i8 %tmp_47, i8 0
+
+ST_10: v0_assign_3_s [1/1] 1.37ns
+._crit_edge18_ifconv:32  %v0_assign_3_s = select i1 %tmp_50, i8 %tmp_47, i8 0
+
+ST_10: sel_tmp2 [1/1] 1.37ns
+._crit_edge18_ifconv:35  %sel_tmp2 = select i1 %sel_tmp1, i8 %v0_assign_1_s, i8 127
+
+ST_10: sel_tmp7 [1/1] 1.37ns
+._crit_edge18_ifconv:39  %sel_tmp7 = select i1 %sel_tmp6, i8 %v0_assign_2_s, i8 %sel_tmp2
+
+ST_10: sel_tmp8 [1/1] 1.37ns
+._crit_edge18_ifconv:43  %sel_tmp8 = select i1 %sel_tmp4, i8 %v0_assign_3_s, i8 %sel_tmp7
+
+ST_10: tmp_54 [1/1] 1.37ns
+._crit_edge18_ifconv:44  %tmp_54 = select i1 %tmp_38, i8 %p_v0_assign, i8 %sel_tmp8
+
+ST_10: stg_141 [1/1] 0.00ns
+._crit_edge18_ifconv:47  br i1 %tmp_52, label %8, label %._crit_edge21
+
+ST_10: tmp_53 [1/1] 0.00ns
+:0  %tmp_53 = call i32 (...)* @_ssdm_op_SpecRegionBegin([13 x i8]* @p_str1824)
+
+ST_10: stg_143 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1806) nounwind
+
+ST_10: stg_144 [1/1] 1.70ns
+:2  call void @_ssdm_op_Write.ap_fifo.volatile.i8P(i8* %nmsupressionMat_data_stream_0_V, i8 %tmp_54)
+
+ST_10: empty_47 [1/1] 0.00ns
+:3  %empty_47 = call i32 (...)* @_ssdm_op_SpecRegionEnd([13 x i8]* @p_str1824, i32 %tmp_53)
+
+ST_10: stg_146 [1/1] 0.00ns
+:4  br label %._crit_edge21
+
+ST_10: filterMask_2_0_1 [1/1] 0.00ns
+._crit_edge21:0  %filterMask_2_0_1 = load i32* %filterMask_2_1, align 4
+
+ST_10: filterMask_1_0_1 [1/1] 0.00ns
+._crit_edge21:1  %filterMask_1_0_1 = load i32* %filterMask_1_1, align 4
+
+ST_10: stg_149 [1/1] 0.00ns
+._crit_edge21:2  store i32 %filterMask_1_0_1, i32* %filterMask_1_0, align 4
+
+ST_10: stg_150 [1/1] 0.00ns
+._crit_edge21:3  store i32 %filterMask_1_1_1, i32* %filterMask_1_1, align 4
+
+ST_10: stg_151 [1/1] 0.00ns
+._crit_edge21:4  store i32 %filterMask_0_1_2, i32* %filterMask_0_1, align 4
+
+ST_10: stg_152 [1/1] 0.00ns
+._crit_edge21:5  store i32 %filterMask_0_0_1, i32* %filterMask_0_0, align 4
+
+ST_10: stg_153 [1/1] 0.00ns
+._crit_edge21:6  store i32 %filterMask_2_0_1, i32* %filterMask_2_0, align 4
+
+ST_10: stg_154 [1/1] 0.00ns
+._crit_edge21:7  store i32 %filterMask_2_1_1, i32* %filterMask_2_1, align 4
+
+ST_10: stg_155 [1/1] 0.00ns
+._crit_edge21:8  br label %2
+
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
